@@ -1,8 +1,9 @@
 from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn import preprocessing
 
 
 # All sklearn Transforms must have the `transform` and `fit` methods
-class Transformations(BaseEstimator, TransformerMixin):
+class   (BaseEstimator, TransformerMixin):
     def __init__(self, columns):
         self.columns = columns
 
@@ -16,6 +17,18 @@ class Transformations(BaseEstimator, TransformerMixin):
        
         data = data.drop(labels=self.columns, axis='columns')
         return data.dropna()
+        
+class Regularization(BaseEstimator, TransformerMixin):
+    def __init__(self, X):
+        self.X = X
+
+    def fit(self, X, y=None):
+        return self
+
+    def std(self, X):
+        scaler = preprocessing.StandardScaler().fit(X)
+        
+        return scaler.transform(X)
         
         
         
