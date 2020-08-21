@@ -3,7 +3,7 @@ from sklearn import preprocessing
 
 
 # All sklearn Transforms must have the `transform` and `fit` methods
-class   (BaseEstimator, TransformerMixin):
+class Transformations(BaseEstimator, TransformerMixin):
     def __init__(self, columns):
         self.columns = columns
 
