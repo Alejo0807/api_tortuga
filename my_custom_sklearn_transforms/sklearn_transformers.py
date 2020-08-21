@@ -18,7 +18,7 @@ class Transformations(BaseEstimator, TransformerMixin):
         data = data.drop(labels=self.columns, axis='columns')
         return data.dropna()
         
-class Regularization(BaseEstimator, TransformerMixin):
+class Regularization:
     def __init__(self, X):
         self.X = X
 
