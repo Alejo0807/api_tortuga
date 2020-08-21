@@ -16,5 +16,6 @@ class Transformations(BaseEstimator, TransformerMixin):
         # Retornamos um novo dataframe sem as colunas indesejadas
        
         data = data.drop(labels=self.columns, axis='columns')
+        data = data.dropna(axis = 0)
         return data
         
