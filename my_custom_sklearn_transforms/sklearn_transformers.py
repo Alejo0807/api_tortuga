@@ -18,17 +18,16 @@ class Transformations(BaseEstimator, TransformerMixin):
         data = data.drop(labels=self.columns, axis='columns')
         return data.dropna()
         
-class Regularization:
+class Regularization(BaseEstimator, TransformerMixin):
     def __init__(self, X):
         self.X = X
 
     def fit(self, X, y=None):
         return self
 
-    def std(self, X):
-        scaler = preprocessing.StandardScaler().fit(X)
+    def transform(self, X):
         
-        return scaler.transform(X)
+        return preprocessing.StandardScaler()
         
         
         
